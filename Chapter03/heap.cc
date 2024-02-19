@@ -10,13 +10,17 @@ int main()
     auto len2 = std::size_t{};
     std::cin >> len2;
 
+    // Variable length function: Created on heap via new function. Returns a pointer
     std::uint32_t *heap_arr = new std::uint32_t[len2];
-    std::cout << heap_arr << '\n';
+    std::cout << "Address of heap array: " << heap_arr << '\n';
+    std::cout << "Contents of heap array: " << *heap_arr << '\n';
+
 
     if (heap_arr != nullptr)
     {
         for (std::size_t i = 0; i < len2; i++)
         {
+            // explicit casting since i is of type size_t and hep_arr is of type uint32_t
             heap_arr[i] = static_cast<std::uint32_t>(i);
         }
 
