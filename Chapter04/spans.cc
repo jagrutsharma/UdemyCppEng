@@ -4,25 +4,30 @@
 #include <span>
 #include <vector>
 
-// void print_container(const std::vector<std::int32_t> &vec)
-// {
-//     for (const auto val : vec)
-//     {
-//         std::cout << val << '\n';
-//     }
-// }
+// Function overloading below (3 functions)
+void print_container(const std::vector<std::int32_t> &vec)
+{
+    std::cout << "Using vector: " << std::endl;
+    for (const auto val : vec)
+    {
+        std::cout << val << '\n';
+    }
+}
 
-// template <std::size_t N>
-// void print_container(const std::array<std::int32_t, N> &arr)
-// {
-//     for (const auto val : arr)
-//     {
-//         std::cout << val << '\n';
-//     }
-// }
+// NOT RECOMMENDED
+template <std::size_t N>
+void print_container(const std::array<std::int32_t, N> &arr)
+{
+    std::cout << "Using array: " << std::endl;
+    for (const auto val : arr)
+    {
+        std::cout << val << '\n';
+    }
+}
 
 void print_container(std::span<std::int32_t> span)
 {
+    std::cout << "Using span: " << std::endl;
     for (const auto val : span)
     {
         std::cout << val << '\n';
