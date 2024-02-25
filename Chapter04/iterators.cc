@@ -60,7 +60,7 @@ int main()
 
     auto dist1 = std::distance(vec_it, my_vector.end());
     auto dist2 = std::distance(my_vector.begin(), vec_it);
-    std::cout << dist1 << " " << dist2 << '\n';
+    std::cout << "Should be 4: " << dist1 << ", Should be 2: " << dist2 << '\n';
 
     auto prev = std::prev(vec_it);
     std::cout << *prev << '\n';
