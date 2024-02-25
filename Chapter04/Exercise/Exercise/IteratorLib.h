@@ -24,7 +24,7 @@ void advance(It &it, DifferenceType n) {
     }
 }
 
-DifferenceType distance(It last, It first) {
+DifferenceType distance(It first, It last) {
     // return std::distance(last, first);
     auto result = DifferenceType{0};
     while (first != last) {
