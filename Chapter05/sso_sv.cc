@@ -55,5 +55,11 @@ int main()
     do_something1("Hi, my name is Jan and i am your instructor.");
     do_something2("Hi, my name is Jan and i am your instructor.");
 
+    auto world = std::string{"Hello World"};
+    do_something2(world);
+
+    auto earth = "Hello Earth";
+    do_something2(earth);
+
     return 0;
 }
