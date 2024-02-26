@@ -4,7 +4,7 @@
 
 void print_found_idx(const std::size_t idx, const std::string &func_name)
 {
-    std::cout << "Function: " << func_name << '\n';
+    std::cout << "Function: " << func_name << " called with idx: " << idx << '\n';
     if (idx != std::string::npos)
         std::cout << "Found at idx: " << idx << '\n';
     else
@@ -30,8 +30,8 @@ int main()
     auto s1 = std::string{"Jann"};
     auto s2 = std::string{"Jan"};
     std::cout << "s1 == s2: " << std::boolalpha << (s1 == s2) << '\n';
-    const auto comapared = s1.compare(s2);
-    std::cout << "s1.comapre(s2): " << comapared << '\n';
+    const auto compared = s1.compare(s2);
+    std::cout << "s1.compare(s2): " << compared << '\n';
 
     const auto search_str = "nn";
     const auto idx = s1.find(search_str);
@@ -39,8 +39,19 @@ int main()
         s1.replace(idx, 2, "n");
     std::cout << s1 << '\n';
 
-    const auto sub_str = s1.substr(2, 3);
-    std::cout << sub_str << '\n';
+    auto weather = std::string{"The sun iss shining bright"};
+    auto typo = std::string{"iss"};
+    auto indexIss = weather.find(typo);
+    if (indexIss != std::string::npos) {
+        const auto sub_str = weather.substr(indexIss, 3);
+        std::cout << "typo: " << sub_str << '\n';
+        weather.replace(indexIss, typo.length(), "-");
+        std::cout << "typo masked: " << weather << '\n';
+    }
+    else {
+        std::cout << "not found in weather" << std::endl;
+    }
+
 
     auto si = std::to_string(42);      // si="42"
     auto sl = std::to_string(42L);     // sl="42"
